@@ -11,14 +11,9 @@ module.exports = {
         publicPath: '/'
     },
     plugins: [
+        new webpack.optimize.DedupePlugin(),
         new webpack.HotModuleReplacementPlugin(),
         new HtmlWebpackPlugin({template: './index.html'}),
-        // new webpack.optimize.UglifyJsPlugin({
-        //     minimize: true,
-        //     compress: {
-        //         warnings: false
-        //     }
-        // }),
         new webpack.DefinePlugin({
             API_URL: process.env.NODE_ENV === 'production' ? 'prodApiHost' : 'devApiHost'
         })
@@ -51,3 +46,16 @@ module.exports = {
     }
 
 };
+
+if (process.env.NODE_ENV === 'production') {
+    module.exports.devtool = false;
+    module.exports.plugins = (module.exports.plugins || []).concat([
+        new webpack.optimize.UglifyJsPlugin({
+            minimize: true,
+            compress: {
+                warnings: false,
+                pure_funcs: ['console.log', 'window.console.log.apply']
+            },
+        }),
+    ])
+}
