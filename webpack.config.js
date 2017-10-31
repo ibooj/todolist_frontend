@@ -11,7 +11,6 @@ module.exports = {
         publicPath: '/'
     },
     plugins: [
-        new webpack.optimize.DedupePlugin(),
         new webpack.HotModuleReplacementPlugin(),
         new HtmlWebpackPlugin({template: './index.html'}),
         new webpack.DefinePlugin({
