@@ -3,7 +3,7 @@ import {history, todoStore} from './store/index';
 import {logoutUser} from './actions/user';
 
 const devApiHost = 'http://127.0.0.1:8000';
-const prodApiHost = 'http://ibooj.pythonanywhere.com';
+const prodApiHost = 'https://ibooj.pythonanywhere.com';
 
 const urls = {
     login: '/api-token-auth/',
