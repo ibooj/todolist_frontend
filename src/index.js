@@ -1,10 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import {Provider} from 'react-redux';
-import {Redirect, Route} from 'react-router';
+import {Route, Redirect} from 'react-router';
 import {ConnectedRouter} from 'react-router-redux';
-import {history, todoStore} from './store/index';
-import {createMuiTheme, MuiThemeProvider} from 'material-ui/styles';
+import {todoStore, history} from './store/index';
+import {MuiThemeProvider, createMuiTheme} from 'material-ui/styles';
 import App from './containers/App';
 import LoginPage from './containers/LoginPage';
 import AboutPage from './containers/AboutPage';

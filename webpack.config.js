@@ -14,8 +14,12 @@ module.exports = {
         new webpack.HotModuleReplacementPlugin(),
         new HtmlWebpackPlugin({template: './index.html'}),
         new webpack.DefinePlugin({
-            API_URL: process.env.NODE_ENV === 'production' ? 'prodApiHost' : 'devApiHost'
+            API_URL: process.env.NODE_ENV === 'production' ? 'prodApiHost' : 'devApiHost',
+            'process.env': {
+                NODE_ENV: JSON.stringify('production')
+            }
         })
+
     ],
     module: {
         rules: [
