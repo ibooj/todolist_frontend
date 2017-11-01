@@ -63,3 +63,12 @@ export const updateSubTask = o => {
         });
     }
 };
+
+export const cleanErrorMessage = () => {
+    return dispatch => {
+        return dispatch({
+            type: 'CLEAN_ERROR_MESSAGE',
+            payload: {response: null, error: null}
+        });
+    }
+};

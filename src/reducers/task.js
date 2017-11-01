@@ -42,6 +42,8 @@ const taskReducer = (state = initialState, action) => {
             return {...state, tasks, error: false};
         case 'UPDATE_SUB_TASK_REJECTED':
             return {...state, response: action.payload.response.data, error: true};
+        case 'CLEAN_ERROR_MESSAGE':
+            return {...state, response: action.payload.response, error: action.payload.error};
         default:
             return state;
     }

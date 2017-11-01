@@ -10,7 +10,16 @@ import ExitToApp from 'material-ui-icons/ExitToApp';
 import Description from 'material-ui-icons/Description';
 import {withStyles} from 'material-ui/styles';
 import {styles} from './AppStyles';
-import {addSubTask, addTask, deleteSubTask, deleteTask, loadTasks, updateSubTask, updateTask} from '../actions/task';
+import {
+    addSubTask,
+    addTask,
+    deleteSubTask,
+    deleteTask,
+    loadTasks,
+    updateSubTask,
+    updateTask,
+    cleanErrorMessage
+} from '../actions/task';
 import {logoutUser} from '../actions/user';
 import TaskList from "../components/TaskList";
 import TopBar from "../components/TopBar";
@@ -91,6 +100,7 @@ const mapDispatchToProps = (dispatch) => {
         addSubTask: bindActionCreators(addSubTask, dispatch),
         deleteSubTask: bindActionCreators(deleteSubTask, dispatch),
         updateSubTask: bindActionCreators(updateSubTask, dispatch),
+        cleanErrorMessage: bindActionCreators(cleanErrorMessage, dispatch),
         logoutUser: bindActionCreators(logoutUser, dispatch)
     };
 };

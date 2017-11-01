@@ -10,7 +10,9 @@ import {loginUser} from '../actions/user';
 const styles = {
     height: 400,
     alignItems: "center",
-    justifyContent: "center"
+    justifyContent: "center",
+    width: "100%",
+    margin: 0
 };
 
 class LoginPage extends React.Component {

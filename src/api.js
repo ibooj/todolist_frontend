@@ -2,8 +2,6 @@ import axios from 'axios';
 import {history, todoStore} from './store/index';
 import {logoutUser} from './actions/user';
 
-const devApiHost = 'http://127.0.0.1:8000';
-const prodApiHost = 'https://ibooj.pythonanywhere.com';
 
 const urls = {
     login: '/api-token-auth/',
@@ -13,7 +11,7 @@ const urls = {
 
 const rest_api = () => {
     const instance = axios.create({
-        baseURL: API_URL
+        baseURL: process.env.NODE_ENV === 'production' ? 'https://ibooj.pythonanywhere.com' : 'http://127.0.0.1:8000'
     });
     const {token} = todoStore.getState().userReducer;
     if (token) {

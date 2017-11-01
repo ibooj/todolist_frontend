@@ -49,6 +49,7 @@ class TopBar extends React.Component {
 
     handleEditDialogClose() {
         this.setState({editDialogStatus: false});
+        this.props.cleanErrorMessage();
     }
 
     render() {

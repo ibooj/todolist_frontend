@@ -35,7 +35,6 @@ class SubTaskList extends React.Component {
         if (this.state.deletingObject) {
             this.inputNameList[this.state.deletingObject.id].blur();
         }
-        // this.setState({snackbarStatus: nextProps.errorResponse.error});
     }
 
     handleTaskStatus(task, e) {
@@ -48,6 +47,7 @@ class SubTaskList extends React.Component {
 
     handleAddDialogClose() {
         this.setState({addDialogStatus: false});
+        this.props.cleanErrorMessage();
     }
 
     handleDeleteDialogOpen(task) {
@@ -108,6 +108,7 @@ class SubTaskList extends React.Component {
 
     handleRequestClose() {
         this.setState({snackbarStatus: false});
+        this.props.cleanErrorMessage();
     }
 
     render() {

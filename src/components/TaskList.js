@@ -24,6 +24,7 @@ class TaskList extends React.Component {
 
     handleAddDialogClose() {
         this.setState({addDialogStatus: false});
+        this.props.cleanErrorMessage();
     }
 
     handleSaveNewTaskList() {
